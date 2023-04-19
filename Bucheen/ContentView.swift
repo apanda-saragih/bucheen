@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "xmark")
+            Image(systemName: "circle.fill")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
             Text("xmark")
