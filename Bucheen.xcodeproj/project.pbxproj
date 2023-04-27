@@ -11,6 +11,14 @@
 		308CA7A029E92FA9003A1232 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308CA79F29E92FA9003A1232 /* ContentView.swift */; };
 		308CA7A229E92FAA003A1232 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308CA7A129E92FAA003A1232 /* Assets.xcassets */; };
 		308CA7A529E92FAA003A1232 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 308CA7A429E92FAA003A1232 /* Preview Assets.xcassets */; };
+		3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587434E29F97CD60001FF43 /* EmotionView.swift */; };
+		3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435029F97CEE0001FF43 /* EmotionBallView.swift */; };
+		3587435429F97D390001FF43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435329F97D390001FF43 /* RegisterView.swift */; };
+		3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435529F97D4F0001FF43 /* ProfileView.swift */; };
+		3587435829F97D700001FF43 /* RecapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435729F97D700001FF43 /* RecapView.swift */; };
+		3587435A29F97D970001FF43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435929F97D970001FF43 /* Constants.swift */; };
+		3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */; };
+		3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435E29F97EA40001FF43 /* EmotionViewModel.swift */; };
 		35FF905F29E94BA600310A4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 35FF905E29E94BA600310A4B /* .gitignore */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +28,14 @@
 		308CA79F29E92FA9003A1232 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		308CA7A129E92FAA003A1232 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		308CA7A429E92FAA003A1232 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3587434E29F97CD60001FF43 /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
+		3587435029F97CEE0001FF43 /* EmotionBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionBallView.swift; sourceTree = "<group>"; };
+		3587435329F97D390001FF43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		3587435529F97D4F0001FF43 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		3587435729F97D700001FF43 /* RecapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecapView.swift; sourceTree = "<group>"; };
+		3587435929F97D970001FF43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
+		3587435E29F97EA40001FF43 /* EmotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewModel.swift; sourceTree = "<group>"; };
 		35FF905E29E94BA600310A4B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,10 +70,13 @@
 		308CA79C29E92FA9003A1232 /* Bucheen */ = {
 			isa = PBXGroup;
 			children = (
+				3587435929F97D970001FF43 /* Constants.swift */,
 				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
-				308CA79F29E92FA9003A1232 /* ContentView.swift */,
+				3587434B29F97C860001FF43 /* View */,
+				3587434C29F97CAB0001FF43 /* ViewModel */,
 				308CA7A129E92FAA003A1232 /* Assets.xcassets */,
 				308CA7A329E92FAA003A1232 /* Preview Content */,
+				3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */,
 			);
 			path = Bucheen;
 			sourceTree = "<group>";
@@ -68,6 +87,35 @@
 				308CA7A429E92FAA003A1232 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3587434B29F97C860001FF43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3587434D29F97CC60001FF43 /* Emotion */,
+				308CA79F29E92FA9003A1232 /* ContentView.swift */,
+				3587435329F97D390001FF43 /* RegisterView.swift */,
+				3587435529F97D4F0001FF43 /* ProfileView.swift */,
+				3587435729F97D700001FF43 /* RecapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3587434C29F97CAB0001FF43 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3587435E29F97EA40001FF43 /* EmotionViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3587434D29F97CC60001FF43 /* Emotion */ = {
+			isa = PBXGroup;
+			children = (
+				3587434E29F97CD60001FF43 /* EmotionView.swift */,
+				3587435029F97CEE0001FF43 /* EmotionBallView.swift */,
+			);
+			path = Emotion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +189,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */,
+				3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */,
+				3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */,
+				3587435429F97D390001FF43 /* RegisterView.swift in Sources */,
+				3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */,
+				3587435829F97D700001FF43 /* RecapView.swift in Sources */,
 				308CA7A029E92FA9003A1232 /* ContentView.swift in Sources */,
+				3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */,
 				308CA79E29E92FA9003A1232 /* BucheenApp.swift in Sources */,
+				3587435A29F97D970001FF43 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +401,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */,
+			);
+			currentVersion = 3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */;
+			path = BucheenCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 308CA79229E92FA9003A1232 /* Project object */;
 }
