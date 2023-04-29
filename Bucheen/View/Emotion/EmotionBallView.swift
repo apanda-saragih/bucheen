@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EmotionBallView: View {
-    @Binding var emotionColor : [Color] // Variable for the list color of the user emotion
+    var emotionColor : [Color] // Variable for the list color of the user emotion
 
     
     var body: some View {

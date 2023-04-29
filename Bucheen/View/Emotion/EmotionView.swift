@@ -9,9 +9,6 @@ import SwiftUI
 
 
 struct EmotionView: View {
-    
-    @State var userEmotionsColor : [Color] = []
-    
     @StateObject var vm = EmotionViewModel()
     
     private let adaptiveColumns = [
@@ -28,7 +25,7 @@ struct EmotionView: View {
                     .font(.system(size:26))
                     .foregroundColor(Color("DarkPurple")) // DarkPurple is defined in asset
                 
-                EmotionBallView(emotionColor: $userEmotionsColor)
+                EmotionBallView(emotionColor: vm.getColorFromEmotions())
                 EmotionListView
             }
             .multilineTextAlignment(.center)
@@ -50,7 +47,6 @@ extension EmotionView {
                 VStack{
                     Button {
                         vm.addEmotions(name: constantListOfEmotion[emotion], image: constantListOfEmotion[emotion], color: constantListOfEmotion[emotion] + "Color")
-                        userEmotionsColor.append(constantListOfEmotionColor[emotion])
                         print(emotion) //debug
                     } label: {
                         Image(constantListOfButton[emotion])

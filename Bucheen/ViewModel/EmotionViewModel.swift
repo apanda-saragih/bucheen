@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 //singleton
 class EmotionManager {
@@ -44,6 +45,15 @@ class EmotionViewModel: ObservableObject {
     init(){
         fetchEmotions()
     }
+    
+    func getColorFromEmotions() -> [Color] {
+        var listOfColors : [Color] = []
+        for en in listOfEmotions {
+            listOfColors.append(Color(en.color!))
+        }
+        return listOfColors
+    }
+    
     func fetchEmotions() {
         let request = NSFetchRequest<EmotionEntity>(entityName: "EmotionEntity")
 
