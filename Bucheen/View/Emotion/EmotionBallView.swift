@@ -10,14 +10,13 @@ import SwiftUI
 struct EmotionBallView: View {
     @Binding var emotionColor : [Color] // Variable for the list color of the user emotion
 
-    
     var body: some View {
         
         VStack {
             //if emotionColor is still empty the ball will be gray
             if emotionColor.isEmpty {
                 Circle()
-                    .strokeBorder(.gray, lineWidth: 1)
+                    .strokeBorder(.gray, lineWidth: 2)
                     .foregroundColor(Color("SuperLightGray"))
                     .frame(width: 223, height: 223)
 
