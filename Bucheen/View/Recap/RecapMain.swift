@@ -16,7 +16,6 @@ struct RecapMain: View {
         NavigationView{
             VStack{
                 Text("Recap of My Feelings")
-                LottieView(name: "56301-marriage-couple-hugging", loopMode: .loop)
                 Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
                     .font(.system(size: 28))
                     .bold()
@@ -30,34 +29,13 @@ struct RecapMain: View {
                 NavigationLink(destination: RecapEmotionView(selectedDate: $selectedDate)){
                     Text("Go To Recap")
                 }
-                
-//  DEBUG
-//                Button {
-//                    let listEntity = vm.listOfEmotions.filter({ entity in
-//                        if let time = entity.time {
-//                            let calendar = Calendar.current
-//                            let dateData = calendar.dateComponents([.year,.month,.day], from: time)
-//                            let today = calendar.dateComponents([.year,.month,.day], from: selectedDate)
-//                            return dateData.year == today.year &&
-//                            dateData.month == today.month &&
-//                            dateData.day == today.day
-//                        }
-//                        return false
-//                    })
-//
-//                    print(listEntity.count)
-//
-//
-//                } label: {
-//                    Text("Show")
-//                }
 
             }
         }
             
-        }
-        
     }
+        
+}
 
 //struct RecapMain_Previews: PreviewProvider {
 //    static var previews: some View {
