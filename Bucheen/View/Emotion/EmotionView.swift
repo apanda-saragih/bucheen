@@ -11,8 +11,9 @@ import SwiftUI
 struct EmotionView: View {
     
     @State var userEmotionsColor : [Color] = []
-    
-    @StateObject var vm = EmotionViewModel()
+    @State private var segmentedController = "Myself"
+    var vm: EmotionViewModel
+    @StateObject var vmAffirm = AffirmationViewModel()
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 80))
@@ -21,24 +22,62 @@ struct EmotionView: View {
     var body: some View {
         ZStack {
             Color("custom_white").ignoresSafeArea()
-            
             VStack{
-                Text("Input Your Current Feelings!")
-                    .bold()
-                    .font(.system(size:26))
-                    .foregroundColor(Color("DarkPurple")) // DarkPurple is defined in asset
+                Picker("" , selection: $segmentedController) {
+                                Text("Myself").tag("Myself")
+                                Text("My Partner").tag("My Partner")
+                            }
+                            .pickerStyle(.segmented)
+                            .foregroundColor(Color("DarkBlue"))
+                            .font(.caption)
+                            .padding(25)
                 
-                EmotionBallView(emotionColor: $userEmotionsColor)
-                EmotionListView
+                if(segmentedController == "Myself"){
+                    Text("Hi, Bro!")
+                        .bold()
+                        .font(.system(size:26))
+                        .foregroundColor(Color("DarkPurple"))
+                        .padding(.bottom, 12)// DarkPurple is defined in asset
+                    Text("How is your current feeling today?")
+//                        .foregroundColor(Color("DarkPurple"))
+                    
+                    EmotionBallView(emotionColor: $userEmotionsColor)
+                    EmotionListView
+                        .padding(.bottom, 72)
+                } else if (segmentedController == "My Partner"){
+                    AffirmationView(vmAffirm: vmAffirm)
+                }
             }
             .multilineTextAlignment(.center)
+        }
+        .onAppear{
+            vm.fetchEmotions()
+        }
+        .onReceive(vm.$listOfEmotions) { _ in
+            // Dictionary -> Array , Set, Dictionary
+            
+            // Closures
+            
+            // Protocol
+            
+            //Higher order function
+            userEmotionsColor = vm.listOfEmotions.map({ entity in
+//                if entity.color != nil{
+//                    return entity.color!
+//                }
+                
+                if let color = entity.color{
+                    return Color(color)
+                }
+                return Color("")
+            })
         }
     }
 }
 
 struct EmotionView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionView()
+        EmotionView(vm: EmotionViewModel())
     }
 }
 
@@ -51,7 +90,7 @@ extension EmotionView {
                     Button {
                         vm.addEmotions(name: constantListOfEmotion[emotion], image: constantListOfEmotion[emotion], color: constantListOfEmotion[emotion] + "Color")
                         userEmotionsColor.append(constantListOfEmotionColor[emotion])
-                        print(emotion) //debug
+//                        print(emotion) //debug
                     } label: {
                         Image(constantListOfButton[emotion])
                             .clipShape(Circle())
@@ -65,4 +104,3 @@ extension EmotionView {
         .padding(.top)
     }
 }
-

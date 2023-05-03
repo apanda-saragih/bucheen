@@ -27,3 +27,26 @@ let constantListOfEmotionColor = [
                                     Color("ConfidentColor")
 ]
 
+let constantListOfAffirmationButton = [
+                                    "VirtualHugsButton",
+                                    "ImHereForYouButton",
+                                    "ProudOfYouButton",
+                                    "SendingLoveButton",
+                                    "CheckInButton",
+                                    "LetsTalkButton",
+                                    "ImListeningButton",
+                                    "AreYouOkButton"
+]
+
+let constantListOfAffirmation = [
+                                    "Virtual Hugs",
+                                    "Here for You",
+                                    "Proud of You",
+                                    "Sending Love",
+                                    "Check In",
+                                    "Let's Talk",
+                                    "I'm Listening",
+                                    "Are u Okay"
+]
+
+let timeFormatForRecap = "HH:mm"

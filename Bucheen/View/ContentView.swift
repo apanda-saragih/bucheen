@@ -10,9 +10,12 @@ import CoreData
 
 struct ContentView: View {
     
-    @AppStorage("signed_in") var hasAccount : Bool = true
+    @AppStorage("signed_in") var hasAccount : Bool = false
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
+    
+    @StateObject var vm = EmotionViewModel()
+    @StateObject var vmAffirm = AffirmationViewModel()
     
     @State var selectedTab : Int = 0
 
@@ -20,13 +23,13 @@ struct ContentView: View {
         ZStack {
             if hasAccount {
                 TabView (selection: $selectedTab){
-                    EmotionView()
+                    EmotionView(vm: vm)
                         .tabItem {
                             Image("emotions")
                             Text("Emotions")
                         }
                         .tag(0)
-                    RecapView()
+                    RecapMain(vm: vm)
                         .tabItem {
                             Image("recap")
                             Text("Recap")
