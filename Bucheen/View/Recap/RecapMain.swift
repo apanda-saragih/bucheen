@@ -10,7 +10,7 @@ import SwiftUI
 struct RecapMain: View {
     @State var recapUser = "myself"
     @State var selectedDate: Date = Date()
-    var vm : EmotionViewModel
+    var emotionsList: FetchedResults<EmotionEntity>
     
     var body: some View {
         NavigationView{

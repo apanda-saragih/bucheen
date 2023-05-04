@@ -9,12 +9,17 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     
     @AppStorage("signed_in") var hasAccount : Bool = false
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
     
-    @StateObject var vm = EmotionViewModel()
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
+        animation: .default)
+    var emotionsList: FetchedResults<EmotionEntity>
+    
     @StateObject var vmAffirm = AffirmationViewModel()
     
     @State var selectedTab : Int = 0
@@ -23,13 +28,13 @@ struct ContentView: View {
         ZStack {
             if hasAccount {
                 TabView (selection: $selectedTab){
-                    EmotionView(vm: vm)
+                    EmotionView()
                         .tabItem {
                             Image("emotions")
                             Text("Emotions")
                         }
                         .tag(0)
-                    RecapMain(vm: vm)
+                    RecapMain(emotionsList: emotionsList)
                         .tabItem {
                             Image("recap")
                             Text("Recap")
