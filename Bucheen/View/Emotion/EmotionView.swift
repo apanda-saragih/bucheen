@@ -10,10 +10,17 @@ import SwiftUI
 
 struct EmotionView: View {
     
+    @AppStorage("name") var name : String?
+    
     @State var userEmotionsColor : [Color] = []
     @State private var segmentedController = "Myself"
-    var vm: EmotionViewModel
+    @State var currentFeeling : String = ""
+    @State var showRecommendationSheet : Bool = false
+   
     @StateObject var vmAffirm = AffirmationViewModel()
+    
+    
+    var vm: EmotionViewModel
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 80))
@@ -30,20 +37,47 @@ struct EmotionView: View {
                             .pickerStyle(.segmented)
                             .foregroundColor(Color("DarkBlue"))
                             .font(.caption)
-                            .padding(25)
+                            .padding(10)
+                            .padding(.horizontal)
                 
                 if(segmentedController == "Myself"){
-                    Text("Hi, Bro!")
+                    Text("Hi, " + (name ?? "User") + "!")
                         .bold()
                         .font(.system(size:26))
                         .foregroundColor(Color("DarkPurple"))
                         .padding(.bottom, 12)// DarkPurple is defined in asset
-                    Text("How is your current feeling today?")
+                Text("How is your current feeling today?")
+                        .padding(.bottom)
+                Text(currentFeeling)
+                        .font(.headline)
+                        .frame(minWidth: 100)
+                        .padding()
+                        .background(Color("super_light_gray"))
+                        .cornerRadius(5)
+                        
+                        
 //                        .foregroundColor(Color("DarkPurple"))
                     
                     EmotionBallView(emotionColor: $userEmotionsColor)
+                    Button {
+                        showRecommendationSheet.toggle()
+                    } label: {
+                        HStack{
+                            Image(systemName: "lightbulb")
+                                .foregroundColor(Color("dark_purple"))
+                            Text("Here's some recommendations for you")
+                                .foregroundColor(Color("dark_purple"))
+                                .underline()
+                        }
+                        
+                    }
+                    .fullScreenCover(isPresented: $showRecommendationSheet) {
+                        RecommendationSheet(currentFeeling: $currentFeeling)
+                    }
+
+                    
                     EmotionListView
-                        .padding(.bottom, 72)
+                        .padding(0)
                 } else if (segmentedController == "My Partner"){
                     AffirmationView(vmAffirm: vmAffirm)
                 }
@@ -61,16 +95,33 @@ struct EmotionView: View {
             // Protocol
             
             //Higher order function
-            userEmotionsColor = vm.listOfEmotions.map({ entity in
-//                if entity.color != nil{
-//                    return entity.color!
-//                }
-                
+            
+            let listEntity = vm.listOfEmotions.filter({ entity in
+                if let time = entity.time {
+                    let calendar = Calendar.current
+                    let dateData = calendar.dateComponents([.year,.month,.day], from: time)
+                    let today = calendar.dateComponents([.year,.month,.day], from: Date.now)
+                    return dateData.year == today.year &&
+                    dateData.month == today.month &&
+                    dateData.day == today.day
+                }
+                return false
+            })
+            
+            if listEntity.isEmpty {
+                currentFeeling = "No Feeling"
+            } else {
+                currentFeeling = listEntity[listEntity.count-1].name ?? "No Feeling"
+            }
+            
+        //Get ColorEntity
+            userEmotionsColor  = listEntity.map({ entity in
                 if let color = entity.color{
                     return Color(color)
                 }
-                return Color("")
+                return Color("HappyEmotion")
             })
+            
         }
     }
 }
@@ -88,9 +139,14 @@ extension EmotionView {
             ForEach(0..<constantListOfEmotion.count, id:\.self) { emotion in
                 VStack{
                     Button {
-                        vm.addEmotions(name: constantListOfEmotion[emotion], image: constantListOfEmotion[emotion], color: constantListOfEmotion[emotion] + "Color")
+                        
+                        vm.addEmotions(
+                            user: (name ?? "User"),
+                            name: constantListOfEmotion[emotion],
+                            image: constantListOfEmotion[emotion],
+                            color: constantListOfEmotion[emotion] + "Color")
                         userEmotionsColor.append(constantListOfEmotionColor[emotion])
-//                        print(emotion) //debug
+                        print(vm.listOfEmotions)
                     } label: {
                         Image(constantListOfButton[emotion])
                             .clipShape(Circle())
@@ -104,3 +160,5 @@ extension EmotionView {
         .padding(.top)
     }
 }
+
+

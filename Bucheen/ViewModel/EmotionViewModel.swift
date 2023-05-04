@@ -54,8 +54,9 @@ class EmotionViewModel: ObservableObject {
         }
     }
 
-    func addEmotions(name : String, image: String, color:String){
+    func addEmotions(user: String, name : String, image: String, color:String){
         let newEmotion = EmotionEntity(context: manager.context)
+        newEmotion.user = user
         newEmotion.name = name
         newEmotion.image = image
         newEmotion.color = color
