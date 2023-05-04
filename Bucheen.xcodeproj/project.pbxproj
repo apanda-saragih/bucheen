@@ -23,6 +23,9 @@
 		30E0277529FC1F0A005A408F /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0277429FC1F0A005A408F /* AffirmationView.swift */; };
 		30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0277629FC442B005A408F /* AffirmationBallView.swift */; };
 		352C1EBF2A02620E00FBB1FC /* RecommendationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */; };
+		352C1F342A039D3000FBB1FC /* recommendation.json in Resources */ = {isa = PBXBuildFile; fileRef = 352C1F312A039D2F00FBB1FC /* recommendation.json */; };
+		352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F322A039D2F00FBB1FC /* readJSONFile.swift */; };
+		352C1F362A039D3000FBB1FC /* recommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F332A039D2F00FBB1FC /* recommendationModel.swift */; };
 		3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587434E29F97CD60001FF43 /* EmotionView.swift */; };
 		3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435029F97CEE0001FF43 /* EmotionBallView.swift */; };
 		3587435429F97D390001FF43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435329F97D390001FF43 /* RegisterView.swift */; };
@@ -50,6 +53,9 @@
 		30E0277429FC1F0A005A408F /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
 		30E0277629FC442B005A408F /* AffirmationBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationBallView.swift; sourceTree = "<group>"; };
 		352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationSheet.swift; sourceTree = "<group>"; };
+		352C1F312A039D2F00FBB1FC /* recommendation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendation.json; sourceTree = "<group>"; };
+		352C1F322A039D2F00FBB1FC /* readJSONFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readJSONFile.swift; sourceTree = "<group>"; };
+		352C1F332A039D2F00FBB1FC /* recommendationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recommendationModel.swift; sourceTree = "<group>"; };
 		3587434E29F97CD60001FF43 /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		3587435029F97CEE0001FF43 /* EmotionBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionBallView.swift; sourceTree = "<group>"; };
 		3587435329F97D390001FF43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -94,6 +100,9 @@
 		308CA79C29E92FA9003A1232 /* Bucheen */ = {
 			isa = PBXGroup;
 			children = (
+				352C1F322A039D2F00FBB1FC /* readJSONFile.swift */,
+				352C1F312A039D2F00FBB1FC /* recommendation.json */,
+				352C1F332A039D2F00FBB1FC /* recommendationModel.swift */,
 				AEB8FBC82A0393BC0097F554 /* Info.plist */,
 				AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */,
 				3587435929F97D970001FF43 /* Constants.swift */,
@@ -234,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				352C1F342A039D3000FBB1FC /* recommendation.json in Resources */,
 				308CA7A529E92FAA003A1232 /* Preview Assets.xcassets in Resources */,
 				35FF905F29E94BA600310A4B /* .gitignore in Resources */,
 				308CA7A229E92FAA003A1232 /* Assets.xcassets in Resources */,
@@ -249,6 +259,8 @@
 			files = (
 				3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */,
 				30A9EA5C2A022E5C0061DE1E /* LottieView.swift in Sources */,
+				352C1F362A039D3000FBB1FC /* recommendationModel.swift in Sources */,
+				352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */,
 				3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */,
 				30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */,
 				3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */,

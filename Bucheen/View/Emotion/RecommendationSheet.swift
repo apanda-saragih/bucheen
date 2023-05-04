@@ -11,6 +11,7 @@ struct RecommendationSheet: View {
     @Binding var currentFeeling : String
     
     @Environment(\.presentationMode) var presentationMode
+    @State var listOfRecommendation : [String] = []
     
     var body: some View {
         ZStack() {
@@ -40,14 +41,29 @@ struct RecommendationSheet: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
+                Text(currentFeeling)
+                Text(listOfRecommendation[Int.random(in: 0..<listOfRecommendation.count)])
                 Spacer()
             }
             .padding()
             
             
         }
+        .onAppear{
+            let entity = recommendation.filter({
+                $0.emotion == currentFeeling
+            })
+            listOfRecommendation = entity[0].recommendation
+
+            
+        }
     }
+    
 }
+
+
+
+
 
 //struct RecommendationSheet_Previews: PreviewProvider {
 //    static var previews: some View {
