@@ -28,9 +28,11 @@
 		3587435429F97D390001FF43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435329F97D390001FF43 /* RegisterView.swift */; };
 		3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435529F97D4F0001FF43 /* ProfileView.swift */; };
 		3587435A29F97D970001FF43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435929F97D970001FF43 /* Constants.swift */; };
-		3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */; };
 		3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435E29F97EA40001FF43 /* EmotionViewModel.swift */; };
 		35FF905F29E94BA600310A4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 35FF905E29E94BA600310A4B /* .gitignore */; };
+		AE0C16382A039F83006B4489 /* Bucheen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */; };
+		AEB8FBCB2A03967F0097F554 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */; };
+		AEB8FBCE2A0396A70097F554 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,11 +57,13 @@
 		3587435329F97D390001FF43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		3587435529F97D4F0001FF43 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3587435929F97D970001FF43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
 		3587435E29F97EA40001FF43 /* EmotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewModel.swift; sourceTree = "<group>"; };
 		35FF905E29E94BA600310A4B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
 		AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BucheenDebug.entitlements; sourceTree = "<group>"; };
 		AEB8FBC82A0393BC0097F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +98,17 @@
 		308CA79C29E92FA9003A1232 /* Bucheen */ = {
 			isa = PBXGroup;
 			children = (
-				AEB8FBC82A0393BC0097F554 /* Info.plist */,
+				AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */,
+				308CA7A129E92FAA003A1232 /* Assets.xcassets */,
+				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
 				AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */,
 				3587435929F97D970001FF43 /* Constants.swift */,
-				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
+				AEB8FBC92A0396730097F554 /* controller */,
+				AEB8FBCC2A0396960097F554 /* helper */,
+				AEB8FBC82A0393BC0097F554 /* Info.plist */,
+				308CA7A329E92FAA003A1232 /* Preview Content */,
 				3587434B29F97C860001FF43 /* View */,
 				3587434C29F97CAB0001FF43 /* ViewModel */,
-				308CA7A129E92FAA003A1232 /* Assets.xcassets */,
-				308CA7A329E92FAA003A1232 /* Preview Content */,
-				3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */,
 			);
 			path = Bucheen;
 			sourceTree = "<group>";
@@ -130,8 +136,8 @@
 		30E0277329FC1EF3005A408F /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
-				30E0277429FC1F0A005A408F /* AffirmationView.swift */,
 				30E0277629FC442B005A408F /* AffirmationBallView.swift */,
+				30E0277429FC1F0A005A408F /* AffirmationView.swift */,
 			);
 			path = Affirmation;
 			sourceTree = "<group>";
@@ -168,6 +174,22 @@
 				352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */,
 			);
 			path = Emotion;
+			sourceTree = "<group>";
+		};
+		AEB8FBC92A0396730097F554 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AEB8FBCC2A0396960097F554 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,11 +269,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0C16382A039F83006B4489 /* Bucheen.xcdatamodeld in Sources */,
 				3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */,
 				30A9EA5C2A022E5C0061DE1E /* LottieView.swift in Sources */,
 				3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */,
 				30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */,
-				3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */,
 				30A9EA4D2A016D430061DE1E /* RecapMain.swift in Sources */,
 				3587435429F97D390001FF43 /* RegisterView.swift in Sources */,
 				30A9EA532A016E2C0061DE1E /* RecapChart.swift in Sources */,
@@ -262,7 +284,9 @@
 				308CA7A029E92FA9003A1232 /* ContentView.swift in Sources */,
 				3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */,
 				30A9EA552A016EA60061DE1E /* CircularComponent.swift in Sources */,
+				AEB8FBCB2A03967F0097F554 /* PersistenceController.swift in Sources */,
 				30A9EA5E2A0233B80061DE1E /* LottieTest.swift in Sources */,
+				AEB8FBCE2A0396A70097F554 /* CoreDataStack.swift in Sources */,
 				308CA79E29E92FA9003A1232 /* BucheenApp.swift in Sources */,
 				3587435A29F97D970001FF43 /* Constants.swift in Sources */,
 				352C1EBF2A02620E00FBB1FC /* RecommendationSheet.swift in Sources */,
@@ -493,13 +517,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */ = {
+		AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */,
+				AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */,
 			);
-			currentVersion = 3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */;
-			path = BucheenCoreData.xcdatamodeld;
+			currentVersion = AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */;
+			path = Bucheen.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

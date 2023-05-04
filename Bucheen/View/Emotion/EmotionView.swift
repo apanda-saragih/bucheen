@@ -9,6 +9,7 @@ import SwiftUI
 
 
 struct EmotionView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     
     @AppStorage("name") var name : String?
     
@@ -19,8 +20,10 @@ struct EmotionView: View {
    
     @StateObject var vmAffirm = AffirmationViewModel()
     
-    
-    var vm: EmotionViewModel
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
+        animation: .default)
+    var emotionsList: FetchedResults<EmotionEntity>
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 80))
@@ -84,10 +87,7 @@ struct EmotionView: View {
             }
             .multilineTextAlignment(.center)
         }
-        .onAppear{
-            vm.fetchEmotions()
-        }
-        .onReceive(vm.$listOfEmotions) { _ in
+        .onAppear() {
             // Dictionary -> Array , Set, Dictionary
             
             // Closures
@@ -96,7 +96,7 @@ struct EmotionView: View {
             
             //Higher order function
             
-            let listEntity = vm.listOfEmotions.filter({ entity in
+            let listEntity = emotionsList.filter({ entity in
                 if let time = entity.time {
                     let calendar = Calendar.current
                     let dateData = calendar.dateComponents([.year,.month,.day], from: time)
@@ -128,7 +128,7 @@ struct EmotionView: View {
 
 struct EmotionView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionView(vm: EmotionViewModel())
+        EmotionView()
     }
 }
 
@@ -139,14 +139,12 @@ extension EmotionView {
             ForEach(0..<constantListOfEmotion.count, id:\.self) { emotion in
                 VStack{
                     Button {
-                        
-                        vm.addEmotions(
-                            user: (name ?? "User"),
+                        addEmotions(
                             name: constantListOfEmotion[emotion],
                             image: constantListOfEmotion[emotion],
                             color: constantListOfEmotion[emotion] + "Color")
                         userEmotionsColor.append(constantListOfEmotionColor[emotion])
-                        print(vm.listOfEmotions)
+                        print(emotionsList)
                     } label: {
                         Image(constantListOfButton[emotion])
                             .clipShape(Circle())
@@ -158,6 +156,44 @@ extension EmotionView {
         }
         .padding()
         .padding(.top)
+    }
+    
+    func addEmotions(name : String, image: String, color:String){
+        let newItem = EmotionEntity(context: viewContext)
+        newItem.name = name
+        newItem.image = image
+        newItem.color = color
+        newItem.time = Date()
+        
+        do {
+            try viewContext.save()
+        } catch {
+            // Replace this implementation with code to handle the error appropriately.
+            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    private func addItem() {
+        withAnimation {
+            
+        }
+    }
+    
+    private func deleteItems(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { emotionsList[$0] }.forEach(viewContext.delete)
+            
+            do {
+                try viewContext.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nsError = error as NSError
+                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+            }
+        }
     }
 }
 

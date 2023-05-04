@@ -23,7 +23,10 @@ struct RecapEmotionView: View {
     
     
     @State var dataChart : [(Double, Color)] = []
-    var vm = EmotionViewModel()
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
+        animation: .default)
+    var emotionsList: FetchedResults<EmotionEntity>
     
     var body: some View {
         VStack{
@@ -77,7 +80,7 @@ struct RecapEmotionView: View {
         }
         .onAppear{
             //Get Entity
-                let listEntity = vm.listOfEmotions.filter({ entity in
+                let listEntity = emotionsList.filter({ entity in
                     if let time = entity.time {
                         let calendar = Calendar.current
                         let dateData = calendar.dateComponents([.year,.month,.day], from: time)
