@@ -58,6 +58,8 @@
 		3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
 		3587435E29F97EA40001FF43 /* EmotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewModel.swift; sourceTree = "<group>"; };
 		35FF905E29E94BA600310A4B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BucheenDebug.entitlements; sourceTree = "<group>"; };
+		AEB8FBC82A0393BC0097F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,8 @@
 		308CA79C29E92FA9003A1232 /* Bucheen */ = {
 			isa = PBXGroup;
 			children = (
+				AEB8FBC82A0393BC0097F554 /* Info.plist */,
+				AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */,
 				3587435929F97D970001FF43 /* Constants.swift */,
 				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
 				3587434B29F97C860001FF43 /* View */,
@@ -388,12 +392,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Bucheen/BucheenDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bucheen/Preview Content\"";
-				DEVELOPMENT_TEAM = 9PUN53DGHU;
+				DEVELOPMENT_TEAM = YW775AAV46;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bucheen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -424,6 +430,7 @@
 				DEVELOPMENT_TEAM = 9PUN53DGHU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Bucheen/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
