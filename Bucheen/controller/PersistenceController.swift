@@ -6,37 +6,28 @@
 //
 
 import CoreData
+import CloudKit
 
 struct PersistenceController {
     static let shared = PersistenceController()
+    
+    let container : NSPersistentCloudKitContainer
 
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        let viewContext = result.container.viewContext
-        for _ in 0..<10 {
-            let newItem = EmotionEntity(context: viewContext)
-            newItem.time = Date()
-        }
-        do {
-            try viewContext.save()
-        } catch {
-            // Replace this implementation with code to handle the error appropriately.
-            // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-            let nsError = error as NSError
-            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-        }
-        return result
-    }()
-
-    let container: NSPersistentCloudKitContainer
-//    let container: NSPersistentCloudKitContainerOptions
+    var viewContext: NSManagedObjectContext {
+        return container.viewContext
+    }
     
 
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "Bucheen")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+        
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("ngga ada coy")
         }
+        description.cloudKitContainerOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: "iCloud.com.octa.Bucheen")
+        
+        description.cloudKitContainerOptions?.databaseScope = .public
+        
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
@@ -53,6 +44,17 @@ struct PersistenceController {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        container.viewContext.automaticallyMergesChangesFromParent = true
+        viewContext.automaticallyMergesChangesFromParent = true
+        viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+    }
+    
+    func saveData(){
+        if container.viewContext.hasChanges {
+            do {
+                try container.viewContext.save()
+            } catch let error {
+                print("Error saving.\(error)")
+            }
+        }
     }
 }

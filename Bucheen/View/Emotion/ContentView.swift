@@ -14,13 +14,16 @@ struct ContentView: View {
     @AppStorage("signed_in") var hasAccount : Bool = false
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
+    @AppStorage("has_partner") var hasPartner : Bool = false
     
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
-        animation: .default)
-    var emotionsList: FetchedResults<EmotionEntity>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
+//        animation: .default)
+//    var emotionsList: FetchedResults<EmotionEntity>
+    var iCloud = iCloudViewModel()
     
-    @StateObject var vmAffirm = AffirmationViewModel()
+//    @StateObject var vmAffirm = AffirmationViewModel()
+    @StateObject var vmEmotion = EmotionViewModel()
     
     @State var selectedTab : Int = 0
 
@@ -28,13 +31,13 @@ struct ContentView: View {
         ZStack {
             if hasAccount {
                 TabView (selection: $selectedTab){
-                    EmotionView()
+                    EmotionView(vmEmotion: vmEmotion)
                         .tabItem {
                             Image("emotions")
                             Text("Emotions")
                         }
                         .tag(0)
-                    RecapMain(emotionsList: emotionsList)
+                    RecapMain(vmEmotion : vmEmotion)
                         .tabItem {
                             Image("recap")
                             Text("Recap")

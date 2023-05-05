@@ -10,7 +10,8 @@ import SwiftUI
 struct RecapMain: View {
     @State var recapUser = "myself"
     @State var selectedDate: Date = Date()
-    var emotionsList: FetchedResults<EmotionEntity>
+//    var emotionsList: FetchedResults<EmotionEntity>
+    var vmEmotion : EmotionViewModel
     
     var body: some View {
         NavigationView{
@@ -26,7 +27,7 @@ struct RecapMain: View {
                     .padding(.horizontal)
                     .datePickerStyle(.graphical)
                
-                NavigationLink(destination: RecapEmotionView(selectedDate: $selectedDate)){
+                NavigationLink(destination: RecapEmotionView(selectedDate: $selectedDate, vmEmotion: vmEmotion)){
                     Text("Go To Recap")
                 }
 
