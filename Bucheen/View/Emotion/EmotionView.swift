@@ -9,18 +9,28 @@ import SwiftUI
 
 
 struct EmotionView: View {
-    
-    @AppStorage("name") var name : String?
-    
     @State var userEmotionsColor : [Color] = []
     @State private var segmentedController = "Myself"
     @State var currentFeeling : String = ""
     @State var showRecommendationSheet : Bool = false
-   
-    @StateObject var vmAffirm = AffirmationViewModel()
     
+//    @Environment(\.managedObjectContext) private var viewContext
     
-    var vm: EmotionViewModel
+    @AppStorage("name") var name : String?
+    @AppStorage("code") var code : String?
+    @AppStorage("partner_code") var partnerCode : String?
+    @AppStorage("has_partner") var hasPartner : Bool?
+    
+//    var vmAffirm = AffirmationViewModel()
+    
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
+//        predicate: 
+//        animation: .default)
+//    var emotionsList: FetchedResults<EmotionEntity>
+//
+    
+    var vmEmotion : EmotionViewModel
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 80))
@@ -79,15 +89,20 @@ struct EmotionView: View {
                     EmotionListView
                         .padding(0)
                 } else if (segmentedController == "My Partner"){
-                    AffirmationView(vmAffirm: vmAffirm)
+                    if hasPartner ?? false {
+//                        AffirmationView(vmAffirm: vmAffirm)
+                    } else {
+                        InvitePartner()
+                    }
+                    
                 }
             }
             .multilineTextAlignment(.center)
         }
         .onAppear{
-            vm.fetchEmotions()
+            vmEmotion.fetchEmotions(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
         }
-        .onReceive(vm.$listOfEmotions) { _ in
+        .onReceive(vmEmotion.$listOfEmotions) { _ in
             // Dictionary -> Array , Set, Dictionary
             
             // Closures
@@ -96,7 +111,8 @@ struct EmotionView: View {
             
             //Higher order function
             
-            let listEntity = vm.listOfEmotions.filter({ entity in
+            var listEntity = vmEmotion.listOfEmotions.filter({ entity in
+                
                 if let time = entity.time {
                     let calendar = Calendar.current
                     let dateData = calendar.dateComponents([.year,.month,.day], from: time)
@@ -108,6 +124,13 @@ struct EmotionView: View {
                 return false
             })
             
+            listEntity = listEntity.filter({ entity in
+                if let user = entity.userCode {
+                    return user == code
+                }
+                return false
+            })
+
             if listEntity.isEmpty {
                 currentFeeling = "No Feeling"
             } else {
@@ -128,7 +151,7 @@ struct EmotionView: View {
 
 struct EmotionView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionView(vm: EmotionViewModel())
+        EmotionView(vmEmotion: EmotionViewModel()).environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
     }
 }
 
@@ -139,14 +162,14 @@ extension EmotionView {
             ForEach(0..<constantListOfEmotion.count, id:\.self) { emotion in
                 VStack{
                     Button {
-                        
-                        vm.addEmotions(
-                            user: (name ?? "User"),
+                        vmEmotion.addEmotions(
+                            userCode : code ?? "00000",
                             name: constantListOfEmotion[emotion],
                             image: constantListOfEmotion[emotion],
                             color: constantListOfEmotion[emotion] + "Color")
                         userEmotionsColor.append(constantListOfEmotionColor[emotion])
-                        print(vm.listOfEmotions)
+                        currentFeeling = constantListOfEmotion[emotion]
+                        print(vmEmotion.listOfEmotions)
                     } label: {
                         Image(constantListOfButton[emotion])
                             .clipShape(Circle())
@@ -159,6 +182,7 @@ extension EmotionView {
         .padding()
         .padding(.top)
     }
+    
 }
 
 

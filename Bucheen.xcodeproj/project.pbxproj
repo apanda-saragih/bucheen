@@ -26,14 +26,20 @@
 		352C1F342A039D3000FBB1FC /* recommendation.json in Resources */ = {isa = PBXBuildFile; fileRef = 352C1F312A039D2F00FBB1FC /* recommendation.json */; };
 		352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F322A039D2F00FBB1FC /* readJSONFile.swift */; };
 		352C1F362A039D3000FBB1FC /* recommendationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F332A039D2F00FBB1FC /* recommendationModel.swift */; };
+		352C1F3A2A03B76500FBB1FC /* InvitePartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F392A03B76500FBB1FC /* InvitePartner.swift */; };
+		352C1F3E2A03C68000FBB1FC /* AddPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F3D2A03C68000FBB1FC /* AddPartnerView.swift */; };
+		352C1F402A04044200FBB1FC /* InvitationsListPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F3F2A04044200FBB1FC /* InvitationsListPartnerView.swift */; };
+		352C1F422A04FAFA00FBB1FC /* iCloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F412A04FAFA00FBB1FC /* iCloudViewModel.swift */; };
 		3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587434E29F97CD60001FF43 /* EmotionView.swift */; };
 		3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435029F97CEE0001FF43 /* EmotionBallView.swift */; };
 		3587435429F97D390001FF43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435329F97D390001FF43 /* RegisterView.swift */; };
 		3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435529F97D4F0001FF43 /* ProfileView.swift */; };
 		3587435A29F97D970001FF43 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435929F97D970001FF43 /* Constants.swift */; };
-		3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */; };
 		3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435E29F97EA40001FF43 /* EmotionViewModel.swift */; };
 		35FF905F29E94BA600310A4B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 35FF905E29E94BA600310A4B /* .gitignore */; };
+		AE0C16382A039F83006B4489 /* Bucheen.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */; };
+		AEB8FBCB2A03967F0097F554 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */; };
+		AEB8FBCE2A0396A70097F554 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,16 +62,22 @@
 		352C1F312A039D2F00FBB1FC /* recommendation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendation.json; sourceTree = "<group>"; };
 		352C1F322A039D2F00FBB1FC /* readJSONFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readJSONFile.swift; sourceTree = "<group>"; };
 		352C1F332A039D2F00FBB1FC /* recommendationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = recommendationModel.swift; sourceTree = "<group>"; };
+		352C1F392A03B76500FBB1FC /* InvitePartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitePartner.swift; sourceTree = "<group>"; };
+		352C1F3D2A03C68000FBB1FC /* AddPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPartnerView.swift; sourceTree = "<group>"; };
+		352C1F3F2A04044200FBB1FC /* InvitationsListPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsListPartnerView.swift; sourceTree = "<group>"; };
+		352C1F412A04FAFA00FBB1FC /* iCloudViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudViewModel.swift; sourceTree = "<group>"; };
 		3587434E29F97CD60001FF43 /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		3587435029F97CEE0001FF43 /* EmotionBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionBallView.swift; sourceTree = "<group>"; };
 		3587435329F97D390001FF43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		3587435529F97D4F0001FF43 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3587435929F97D970001FF43 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
 		3587435E29F97EA40001FF43 /* EmotionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionViewModel.swift; sourceTree = "<group>"; };
 		35FF905E29E94BA600310A4B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucheenCoreData.xcdatamodel; sourceTree = "<group>"; };
 		AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BucheenDebug.entitlements; sourceTree = "<group>"; };
 		AEB8FBC82A0393BC0097F554 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,14 +116,16 @@
 				352C1F312A039D2F00FBB1FC /* recommendation.json */,
 				352C1F332A039D2F00FBB1FC /* recommendationModel.swift */,
 				AEB8FBC82A0393BC0097F554 /* Info.plist */,
+				AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */,
+				308CA7A129E92FAA003A1232 /* Assets.xcassets */,
+				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
 				AEB8FBC72A0393B90097F554 /* BucheenDebug.entitlements */,
 				3587435929F97D970001FF43 /* Constants.swift */,
-				308CA79D29E92FA9003A1232 /* BucheenApp.swift */,
+				AEB8FBC92A0396730097F554 /* controller */,
+				AEB8FBCC2A0396960097F554 /* helper */,
+				308CA7A329E92FAA003A1232 /* Preview Content */,
 				3587434B29F97C860001FF43 /* View */,
 				3587434C29F97CAB0001FF43 /* ViewModel */,
-				308CA7A129E92FAA003A1232 /* Assets.xcassets */,
-				308CA7A329E92FAA003A1232 /* Preview Content */,
-				3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */,
 			);
 			path = Bucheen;
 			sourceTree = "<group>";
@@ -139,8 +153,8 @@
 		30E0277329FC1EF3005A408F /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
-				30E0277429FC1F0A005A408F /* AffirmationView.swift */,
 				30E0277629FC442B005A408F /* AffirmationBallView.swift */,
+				30E0277429FC1F0A005A408F /* AffirmationView.swift */,
 			);
 			path = Affirmation;
 			sourceTree = "<group>";
@@ -150,7 +164,6 @@
 			children = (
 				30E0277329FC1EF3005A408F /* Affirmation */,
 				3587434D29F97CC60001FF43 /* Emotion */,
-				308CA79F29E92FA9003A1232 /* ContentView.swift */,
 				30A9EA4B2A016D180061DE1E /* Recap */,
 				3587435329F97D390001FF43 /* RegisterView.swift */,
 				3587435529F97D4F0001FF43 /* ProfileView.swift */,
@@ -165,6 +178,7 @@
 			children = (
 				3070C6D22A000C2D00820184 /* AffirmationViewModel.swift */,
 				3587435E29F97EA40001FF43 /* EmotionViewModel.swift */,
+				352C1F412A04FAFA00FBB1FC /* iCloudViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -172,11 +186,31 @@
 		3587434D29F97CC60001FF43 /* Emotion */ = {
 			isa = PBXGroup;
 			children = (
-				3587434E29F97CD60001FF43 /* EmotionView.swift */,
 				3587435029F97CEE0001FF43 /* EmotionBallView.swift */,
+				3587434E29F97CD60001FF43 /* EmotionView.swift */,
 				352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */,
+				352C1F392A03B76500FBB1FC /* InvitePartner.swift */,
+				308CA79F29E92FA9003A1232 /* ContentView.swift */,
+				352C1F3D2A03C68000FBB1FC /* AddPartnerView.swift */,
+				352C1F3F2A04044200FBB1FC /* InvitationsListPartnerView.swift */,
 			);
 			path = Emotion;
+			sourceTree = "<group>";
+		};
+		AEB8FBC92A0396730097F554 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				AEB8FBCA2A03967F0097F554 /* PersistenceController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		AEB8FBCC2A0396960097F554 /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				AEB8FBCD2A0396A70097F554 /* CoreDataStack.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,24 +291,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE0C16382A039F83006B4489 /* Bucheen.xcdatamodeld in Sources */,
 				3587435F29F97EA40001FF43 /* EmotionViewModel.swift in Sources */,
 				30A9EA5C2A022E5C0061DE1E /* LottieView.swift in Sources */,
 				352C1F362A039D3000FBB1FC /* recommendationModel.swift in Sources */,
+				352C1F402A04044200FBB1FC /* InvitationsListPartnerView.swift in Sources */,
 				352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */,
 				3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */,
 				30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */,
-				3587435D29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld in Sources */,
 				30A9EA4D2A016D430061DE1E /* RecapMain.swift in Sources */,
 				3587435429F97D390001FF43 /* RegisterView.swift in Sources */,
 				30A9EA532A016E2C0061DE1E /* RecapChart.swift in Sources */,
 				3070C6D32A000C2D00820184 /* AffirmationViewModel.swift in Sources */,
 				3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */,
 				30A9EA512A016DCF0061DE1E /* LogEmotion.swift in Sources */,
+				352C1F3E2A03C68000FBB1FC /* AddPartnerView.swift in Sources */,
 				30E0277529FC1F0A005A408F /* AffirmationView.swift in Sources */,
 				308CA7A029E92FA9003A1232 /* ContentView.swift in Sources */,
 				3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */,
+				352C1F3A2A03B76500FBB1FC /* InvitePartner.swift in Sources */,
 				30A9EA552A016EA60061DE1E /* CircularComponent.swift in Sources */,
+				352C1F422A04FAFA00FBB1FC /* iCloudViewModel.swift in Sources */,
+				AEB8FBCB2A03967F0097F554 /* PersistenceController.swift in Sources */,
 				30A9EA5E2A0233B80061DE1E /* LottieTest.swift in Sources */,
+				AEB8FBCE2A0396A70097F554 /* CoreDataStack.swift in Sources */,
 				308CA79E29E92FA9003A1232 /* BucheenApp.swift in Sources */,
 				3587435A29F97D970001FF43 /* Constants.swift in Sources */,
 				352C1EBF2A02620E00FBB1FC /* RecommendationSheet.swift in Sources */,
@@ -408,7 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Bucheen/Preview Content\"";
-				DEVELOPMENT_TEAM = YW775AAV46;
+				DEVELOPMENT_TEAM = 9PUN53DGHU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bucheen/Info.plist;
@@ -417,13 +457,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Aam.Bucheen;
+				PRODUCT_BUNDLE_IDENTIFIER = Axel.Bucheen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -448,7 +488,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -505,13 +545,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		3587435B29F97DCE0001FF43 /* BucheenCoreData.xcdatamodeld */ = {
+		AE0C16362A039F83006B4489 /* Bucheen.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */,
+				AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */,
 			);
-			currentVersion = 3587435C29F97DCE0001FF43 /* BucheenCoreData.xcdatamodel */;
-			path = BucheenCoreData.xcdatamodeld;
+			currentVersion = AE0C16372A039F83006B4489 /* BucheenCoreData.xcdatamodel */;
+			path = Bucheen.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

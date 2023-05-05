@@ -8,55 +8,38 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
-//singleton
-class EmotionManager {
-    static let instance = EmotionManager()
-    let container : NSPersistentContainer
-    let context : NSManagedObjectContext
-
-    init(){
-        container = NSPersistentContainer(name: "BucheenCoreData")
-        container.loadPersistentStores { (description, error) in
-            if let error = error {
-                print("error loading coredata! \(error)")
-            } else {
-                print("succesfully loaded core data!")
-            }
-        }
-        context = container.viewContext
-    }
-
-    func saveData(){
-        do {
-            try context.save()
-        } catch let error {
-            print("Error saving.\(error)")
-        }
-    }
-}
 
 class EmotionViewModel: ObservableObject {
+    
+    @AppStorage("code") var code : String?
+    @AppStorage("partner_code") var partnerCode : String?
 
-    let manager = EmotionManager.instance
+
+    let manager = PersistenceController.shared
     @Published var listOfEmotions : [EmotionEntity] = []
+    @Published var listOfPartnerEmotions : [EmotionEntity] = []
 
     init(){
-        fetchEmotions()
+        fetchEmotions(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
     }
-    func fetchEmotions() {
-        let request = NSFetchRequest<EmotionEntity>(entityName: "EmotionEntity")
+    func fetchEmotions(userCode : String, partnerCode: String) {
+        let predicate = NSPredicate(format: "userCode == %@ OR userCode == %@", userCode, partnerCode)
+        let request: NSFetchRequest<EmotionEntity> = EmotionEntity.fetchRequest()
+        request.predicate = predicate
 
         do {
-            listOfEmotions = try manager.context.fetch(request)
+            listOfEmotions = try manager.viewContext.fetch(request)
         }catch let error {
             print ("Error fetching \(error)")
         }
     }
+    
 
-    func addEmotions(user: String, name : String, image: String, color:String){
-        let newEmotion = EmotionEntity(context: manager.context)
-        newEmotion.user = user
+    func addEmotions(userCode: String, name : String, image: String, color:String){
+        let newEmotion = EmotionEntity(context: manager.viewContext)
+        newEmotion.userCode = userCode
         newEmotion.name = name
         newEmotion.image = image
         newEmotion.color = color
@@ -65,12 +48,10 @@ class EmotionViewModel: ObservableObject {
     }
 
     func saveData(){
-//        listOfEmotions.removeAll()
-
         manager.saveData()
-        fetchEmotions()
+        fetchEmotions(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
         print("emotion is saved")
-        print(listOfEmotions.count)
+        print(listOfEmotions)
     }
 
 

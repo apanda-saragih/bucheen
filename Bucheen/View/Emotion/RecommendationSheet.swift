@@ -9,9 +9,10 @@ import SwiftUI
 
 struct RecommendationSheet: View {
     @Binding var currentFeeling : String
+   
     
     @Environment(\.presentationMode) var presentationMode
-    @State var listOfRecommendation : [String] = []
+    @State var listOfRecommendation : [String] = ["Happy1","Happy2","Happy3"]
     
     var body: some View {
         ZStack() {
