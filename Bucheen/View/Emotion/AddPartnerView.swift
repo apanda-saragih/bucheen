@@ -9,6 +9,8 @@ import SwiftUI
 
 struct AddPartnerView: View {
     @Environment(\.presentationMode) var presentationMode
+    
+//    var vmEmotion : EmotionViewModel
 
     @AppStorage("partner_code") var partnerCode : String?
     @AppStorage("has_partner") var hasPartner : Bool?
@@ -155,6 +157,7 @@ struct AddPartnerView: View {
                             code = no1 + no2 + no3 + no4 + no5
                         }
                     }
+                
 
             }
             .onAppear{
@@ -162,18 +165,20 @@ struct AddPartnerView: View {
                     focusedField = .no1
             }
         }
-       
-//            Button {
-//                print(code as Any)
-//            } label: {
-//                Text(code1)
+//            NavigationLink(destination: EmotionView()) {
+//                Text("Connect")
+//                    .foregroundColor(.white)
+//                    .padding()
+//                    .padding(.horizontal)
+//                    .frame(maxWidth: .infinity, minHeight: 50)
+//                    .background(Color("DarkPurple"))
+//                    .cornerRadius(10)
 //            }
-
+            
             Button {
                 //function to fetch data according to partner's code
                 partnerCode = code
                 hasPartner = true
-                presentationMode.wrappedValue.dismiss()
             } label: {
                 Text("Connect")
                     .foregroundColor(.white)
@@ -184,6 +189,7 @@ struct AddPartnerView: View {
                     .cornerRadius(10)
             }
             .padding(.top, 20)
+            
         }.navigationBarBackButtonHidden(true)
             .toolbar(content: {
                 ToolbarItem (placement: .navigationBarLeading)  {

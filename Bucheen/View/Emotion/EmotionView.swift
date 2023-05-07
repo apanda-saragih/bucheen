@@ -14,21 +14,12 @@ struct EmotionView: View {
     @State var currentFeeling : String = ""
     @State var showRecommendationSheet : Bool = false
     
-//    @Environment(\.managedObjectContext) private var viewContext
-    
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
     @AppStorage("partner_code") var partnerCode : String?
     @AppStorage("has_partner") var hasPartner : Bool?
     
-//    var vmAffirm = AffirmationViewModel()
-    
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
-//        predicate: 
-//        animation: .default)
-//    var emotionsList: FetchedResults<EmotionEntity>
-//
+//    @StateObject var vmAffirm = AffirmationViewModel()
     
     var vmEmotion : EmotionViewModel
     
@@ -90,7 +81,7 @@ struct EmotionView: View {
                         .padding(0)
                 } else if (segmentedController == "My Partner"){
                     if hasPartner ?? false {
-//                        AffirmationView(vmAffirm: vmAffirm)
+                        AffirmationView(vmEmotion: vmEmotion)
                     } else {
                         InvitePartner()
                     }
@@ -151,7 +142,7 @@ struct EmotionView: View {
 
 struct EmotionView_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionView(vmEmotion: EmotionViewModel()).environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+        EmotionView(vmEmotion: EmotionViewModel())
     }
 }
 

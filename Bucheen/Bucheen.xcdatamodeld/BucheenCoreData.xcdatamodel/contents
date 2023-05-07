@@ -3,8 +3,8 @@
     <entity name="AffirmationEntity" representedClassName="AffirmationEntity" syncable="YES" codeGenerationType="class">
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="partnerCode" optional="YES" attributeType="String"/>
         <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="userCode" optional="YES" attributeType="String"/>
     </entity>
     <entity name="EmotionEntity" representedClassName="EmotionEntity" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="String"/>

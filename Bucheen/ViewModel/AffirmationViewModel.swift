@@ -1,72 +1,45 @@
-////
-////  AffirmationViewModel.swift
-////  Bucheen
-////
-////  Created by Abraham Putra Lukas on 01/05/23.
-////
-//
-//import Foundation
-//import CoreData
-//
-//class AffirmationManager {
-//    static let affirmInstance = AffirmationManager()
-//    let affirmContainer : NSPersistentContainer
-//    let affirmContext : NSManagedObjectContext
-//
-//    init(){
-//        affirmContainer = NSPersistentContainer(name: "Bucheen")
-//        affirmContainer.loadPersistentStores { (description, error) in
-//            if let error = error {
-//                print("error loading coredata! \(error)")
-//            } else {
-//                print("succesfully loaded core data!")
-//            }
-//        }
-//        affirmContext = affirmContainer.viewContext
-//    }
-//
-//    func saveData(){
-//        do {
-//            try affirmContext.save()
-//        } catch let error {
-//            print("Error saving.\(error)")
-//        }
-//    }
-//}
-//
-//class AffirmationViewModel: ObservableObject {
-//
-//    let affirmManager = AffirmationManager.affirmInstance
-//    @Published var listOfAffirmations : [AffirmationEntity] = []
-//
-//    init(){
-//        fetchAffirmations()
-//    }
-//    func fetchAffirmations() {
-//        let request = NSFetchRequest<AffirmationEntity>(entityName: "AffirmationEntity")
-//
-//        do {
-//            listOfAffirmations = try affirmManager.affirmContext.fetch(request)
-//        }catch let error {
-//            print ("Error fetching \(error)")
-//        }
-//    }
-//
-//    func addAffirmations(name : String, image: String, partnerCode : String){
-//        let newAffirmation = AffirmationEntity(context: affirmManager.affirmContext)
-//        newAffirmation.partnerCode = partnerCode
-//        newAffirmation.name = name
-//        newAffirmation.image = image
-//        newAffirmation.time = Date()
-//        saveData()
-//    }
-//
-//    func saveData(){
-//        affirmManager.saveData()
-//        fetchAffirmations()
-//        print("affirm is saved")
-//        print(listOfAffirmations.count)
-//    }
-//
-//
-//}
+import Foundation
+import CoreData
+import SwiftUI
+
+class AffirmationViewModel: ObservableObject {
+    
+    @AppStorage("code") var code : String?
+    @AppStorage("partner_code") var partnerCode : String?
+
+
+    let manager = PersistenceController.shared
+    @Published var listOfAffirmation: [AffirmationEntity] = []
+
+    init(){
+        fetchAffirmation(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
+    }
+    func fetchAffirmation(userCode : String, partnerCode: String) {
+        let predicate = NSPredicate(format: "userCode == %@ OR userCode == %@", userCode, partnerCode)
+        let request: NSFetchRequest<AffirmationEntity> = AffirmationEntity.fetchRequest()
+        request.predicate = predicate
+
+        do {
+            listOfAffirmation = try manager.viewContext.fetch(request)
+        }catch let error {
+            print ("Error fetching \(error)")
+        }
+    }
+    
+
+    func addAffirmation(name : String, image: String, userCode: String){
+        let newAffirmation = AffirmationEntity(context: manager.viewContext)
+        newAffirmation.name = name
+        newAffirmation.image = image
+        newAffirmation.userCode = partnerCode
+        newAffirmation.time = Date()
+        saveData()
+    }
+
+    func saveData(){
+        manager.saveData()
+        fetchAffirmation(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
+        print("emotion is saved")
+        print(listOfAffirmation)
+    }
+}

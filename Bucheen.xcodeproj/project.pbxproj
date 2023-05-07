@@ -20,8 +20,6 @@
 		30A9EA582A022E2A0061DE1E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 30A9EA572A022E2A0061DE1E /* Lottie */; };
 		30A9EA5C2A022E5C0061DE1E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9EA5B2A022E5C0061DE1E /* LottieView.swift */; };
 		30A9EA5E2A0233B80061DE1E /* LottieTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30A9EA5D2A0233B80061DE1E /* LottieTest.swift */; };
-		30E0277529FC1F0A005A408F /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0277429FC1F0A005A408F /* AffirmationView.swift */; };
-		30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E0277629FC442B005A408F /* AffirmationBallView.swift */; };
 		352C1EBF2A02620E00FBB1FC /* RecommendationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */; };
 		352C1F342A039D3000FBB1FC /* recommendation.json in Resources */ = {isa = PBXBuildFile; fileRef = 352C1F312A039D2F00FBB1FC /* recommendation.json */; };
 		352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F322A039D2F00FBB1FC /* readJSONFile.swift */; };
@@ -30,6 +28,7 @@
 		352C1F3E2A03C68000FBB1FC /* AddPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F3D2A03C68000FBB1FC /* AddPartnerView.swift */; };
 		352C1F402A04044200FBB1FC /* InvitationsListPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F3F2A04044200FBB1FC /* InvitationsListPartnerView.swift */; };
 		352C1F422A04FAFA00FBB1FC /* iCloudViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F412A04FAFA00FBB1FC /* iCloudViewModel.swift */; };
+		352C1F442A07A2E100FBB1FC /* AffirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352C1F432A07A2E100FBB1FC /* AffirmationView.swift */; };
 		3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587434E29F97CD60001FF43 /* EmotionView.swift */; };
 		3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435029F97CEE0001FF43 /* EmotionBallView.swift */; };
 		3587435429F97D390001FF43 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587435329F97D390001FF43 /* RegisterView.swift */; };
@@ -56,8 +55,6 @@
 		30A9EA542A016EA60061DE1E /* CircularComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularComponent.swift; sourceTree = "<group>"; };
 		30A9EA5B2A022E5C0061DE1E /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		30A9EA5D2A0233B80061DE1E /* LottieTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTest.swift; sourceTree = "<group>"; };
-		30E0277429FC1F0A005A408F /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
-		30E0277629FC442B005A408F /* AffirmationBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationBallView.swift; sourceTree = "<group>"; };
 		352C1EBE2A02620E00FBB1FC /* RecommendationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationSheet.swift; sourceTree = "<group>"; };
 		352C1F312A039D2F00FBB1FC /* recommendation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = recommendation.json; sourceTree = "<group>"; };
 		352C1F322A039D2F00FBB1FC /* readJSONFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = readJSONFile.swift; sourceTree = "<group>"; };
@@ -66,6 +63,7 @@
 		352C1F3D2A03C68000FBB1FC /* AddPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPartnerView.swift; sourceTree = "<group>"; };
 		352C1F3F2A04044200FBB1FC /* InvitationsListPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationsListPartnerView.swift; sourceTree = "<group>"; };
 		352C1F412A04FAFA00FBB1FC /* iCloudViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iCloudViewModel.swift; sourceTree = "<group>"; };
+		352C1F432A07A2E100FBB1FC /* AffirmationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffirmationView.swift; sourceTree = "<group>"; };
 		3587434E29F97CD60001FF43 /* EmotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		3587435029F97CEE0001FF43 /* EmotionBallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionBallView.swift; sourceTree = "<group>"; };
 		3587435329F97D390001FF43 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -153,8 +151,7 @@
 		30E0277329FC1EF3005A408F /* Affirmation */ = {
 			isa = PBXGroup;
 			children = (
-				30E0277629FC442B005A408F /* AffirmationBallView.swift */,
-				30E0277429FC1F0A005A408F /* AffirmationView.swift */,
+				352C1F432A07A2E100FBB1FC /* AffirmationView.swift */,
 			);
 			path = Affirmation;
 			sourceTree = "<group>";
@@ -298,15 +295,14 @@
 				352C1F402A04044200FBB1FC /* InvitationsListPartnerView.swift in Sources */,
 				352C1F352A039D3000FBB1FC /* readJSONFile.swift in Sources */,
 				3587434F29F97CD60001FF43 /* EmotionView.swift in Sources */,
-				30E0277729FC442B005A408F /* AffirmationBallView.swift in Sources */,
 				30A9EA4D2A016D430061DE1E /* RecapMain.swift in Sources */,
 				3587435429F97D390001FF43 /* RegisterView.swift in Sources */,
 				30A9EA532A016E2C0061DE1E /* RecapChart.swift in Sources */,
+				352C1F442A07A2E100FBB1FC /* AffirmationView.swift in Sources */,
 				3070C6D32A000C2D00820184 /* AffirmationViewModel.swift in Sources */,
 				3587435129F97CEE0001FF43 /* EmotionBallView.swift in Sources */,
 				30A9EA512A016DCF0061DE1E /* LogEmotion.swift in Sources */,
 				352C1F3E2A03C68000FBB1FC /* AddPartnerView.swift in Sources */,
-				30E0277529FC1F0A005A408F /* AffirmationView.swift in Sources */,
 				308CA7A029E92FA9003A1232 /* ContentView.swift in Sources */,
 				3587435629F97D4F0001FF43 /* ProfileView.swift in Sources */,
 				352C1F3A2A03B76500FBB1FC /* InvitePartner.swift in Sources */,

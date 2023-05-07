@@ -16,10 +16,6 @@ struct ContentView: View {
     @AppStorage("code") var code : String?
     @AppStorage("has_partner") var hasPartner : Bool = false
     
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
-//        animation: .default)
-//    var emotionsList: FetchedResults<EmotionEntity>
     var iCloud = iCloudViewModel()
     
 //    @StateObject var vmAffirm = AffirmationViewModel()
