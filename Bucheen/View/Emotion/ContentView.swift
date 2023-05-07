@@ -15,11 +15,8 @@ struct ContentView: View {
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
     @AppStorage("has_partner") var hasPartner : Bool = false
+    @AppStorage("partner_code") var partnerCode : String?
     
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \EmotionEntity.time, ascending: true)],
-//        animation: .default)
-//    var emotionsList: FetchedResults<EmotionEntity>
     var iCloud = iCloudViewModel()
     
 //    @StateObject var vmAffirm = AffirmationViewModel()
@@ -37,7 +34,7 @@ struct ContentView: View {
                             Text("Emotions")
                         }
                         .tag(0)
-                    RecapMain(vmEmotion : vmEmotion)
+                    RecapEmotionView(selectedTab: $selectedTab, vmEmotion : vmEmotion)
                         .tabItem {
                             Image("recap")
                             Text("Recap")

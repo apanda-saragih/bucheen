@@ -1,45 +1,50 @@
+////
+////  RecapMain.swift
+////  Bucheen
+////
+////  Created by Abraham Putra Lukas on 02/05/23.
+////
 //
-//  RecapMain.swift
-//  Bucheen
+//import SwiftUI
 //
-//  Created by Abraham Putra Lukas on 02/05/23.
+//struct RecapMain: View {
+//    @State var recapUser = "myself"
+//    @State var selectedDate: Date = Date()
+//    var vmEmotion : EmotionViewModel
 //
-
-import SwiftUI
-
-struct RecapMain: View {
-    @State var recapUser = "myself"
-    @State var selectedDate: Date = Date()
-//    var emotionsList: FetchedResults<EmotionEntity>
-    var vmEmotion : EmotionViewModel
-    
-    var body: some View {
-        NavigationView{
-            VStack{
-                Text("Recap of My Feelings")
-                Text(selectedDate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.system(size: 28))
-                    .bold()
-                    .foregroundColor(Color.accentColor)
-                    .padding()
-                    .animation(.spring(), value: selectedDate)
-                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
-                    .padding(.horizontal)
-                    .datePickerStyle(.graphical)
-               
-                NavigationLink(destination: RecapEmotionView(selectedDate: $selectedDate, vmEmotion: vmEmotion)){
-                    Text("Go To Recap")
-                }
-
-            }
-        }
-            
-    }
-        
-}
-
+//    var body: some View {
+//        NavigationView{
+//            VStack{
+//                Text("Feelings Recap")
+//                    .bold()
+//                    .font(.system(size:26))
+//                    .foregroundColor(Color("DarkPurple"))
+//                    .padding(.bottom, 12)
+//                DatePicker("Select Date", selection: $selectedDate, displayedComponents: [.date])
+//                    .padding(.horizontal)
+//                    .datePickerStyle(.compact)
+//
+////                RecapEmotionView(selectedDate : $selectedDate, vmEmotion: vmEmotion)
+//
+//                NavigationLink(destination: RecapEmotionView(selectedDate: $selectedDate, vmEmotion: vmEmotion)){
+//                    Text("See Recap")
+//                        .font(.headline)
+//                        .foregroundColor(Color("custom_white"))
+//                        .frame(maxWidth: .infinity)
+//                        .frame(height: 54)
+//                        .background(Color("dark_purple"))
+//                        .cornerRadius(10)
+//                }
+//                Spacer()
+//            }
+//        }
+//
+//    }
+//
+//}
+//
 //struct RecapMain_Previews: PreviewProvider {
 //    static var previews: some View {
-//        RecapMain()
+//        RecapMain(vmEmotion: EmotionViewModel())
 //    }
 //}

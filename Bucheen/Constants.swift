@@ -39,14 +39,14 @@ let constantListOfAffirmationButton = [
 ]
 
 let constantListOfAffirmation = [
-                                    "Virtual Hugs",
-                                    "Here for You",
-                                    "Proud of You",
-                                    "Sending Love",
-                                    "Check In",
-                                    "Let's Talk",
-                                    "I'm Listening",
-                                    "Are u Okay"
+    "Virtual Hugs",
+   "Here For You",
+   "Proud Of You",
+   "Sending Love",
+   "One Step At A Time",
+   "Let's Talk",
+   "I'm Listening",
+   "Are You Okay"
 ]
 
 let timeFormatForRecap = "HH:mm"

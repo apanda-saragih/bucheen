@@ -2,65 +2,68 @@
    {
       "emotion":"Happy",
       "recommendation":[
-         "Happy1",
-         "Happy2",
-         "Happy3"
+         "When you're feeling happy, it's a wonderful opportunity to share that positivity with the people in your life. Start by expressing gratitude for the things that brought you joy, whether it's spending time with loved ones, accomplishing a goal, or simply enjoying the little moments of life. Share your happiness with those around you, whether it's through a heartfelt conversation, a thoughtful gift, or an act of kindness. You can also spread joy by participating in activities that benefit your community, such as volunteering or supporting a local charity. Additionally, take time to appreciate the people in your life who have contributed to your happiness, and let them know how much you value their presence. Remember, sharing your happiness not only spreads positivity, but it also reinforces the connections and bonds that make life fulfilling.",
+         "When you're feeling happy, it's important to share that joy with those around you. Take a moment to reflect on what's making you happy and why, and then express that to your loved ones. This could mean telling them how much you appreciate them, sharing a funny story, or simply smiling and enjoying the moment together. You could also spread your happiness by doing something kind for someone else, like sending a thoughtful message or offering to help with a task. Remember that happiness is contagious, and by sharing your positive emotions with others, you can uplift their spirits as well.",
+         "Feeling happy is a wonderful thing, and it's important to share that feeling with the people in your life. One way to do this is to express your gratitude for the good things in your life, whether it's a kind friend or a beautiful day outside. You could also share your happiness by doing something enjoyable together, like going for a walk, cooking a meal, or playing a game. Another way to spread your happiness is to volunteer your time or resources to a cause you care about, as helping others can bring immense joy and fulfillment. Remember, by sharing your happiness with others, you can create a positive ripple effect that can brighten the world.",
+         "Happiness is a powerful emotion, and it's important to share that feeling with others. When you're feeling happy, take a moment to express your gratitude and appreciation for the people and things that are bringing you joy. You could write a heartfelt message, make a phone call, or simply give someone a warm hug to share your happiness with them. It's also important to remember that happiness is not a constant state, so when you are feeling happy, make the most of it by doing things that make you feel even better, like exercising, spending time in nature, or pursuing a hobby you love. By sharing your happiness with those around you, you can create a positive and supportive network that uplifts everyone's spirits."
       ]
    },
    {
       "emotion":"Sad",
       "recommendation":[
-         "Sad1",
-         "Sad2",
-         "Sad3"
+         "I'm sorry to hear that you're feeling sad. It's completely normal to experience sadness from time to time, and it's important to take care of yourself during these times.   Sometimes we try to push away our negative emotions, but it's important to acknowledge and accept them. Allow yourself to feel sad, and don't judge yourself for it. This can help you process the emotions and move forward. Another recommendation is to practice self-care, prioritizing self-care can help you feel more relaxed and energized. Don't hesitate to reach out your partner too if you feel you need extra support.",
+         "It's unfortunate to hear that you're feeling down. It's okay to feel sad sometimes and taking care of yourself during these periods is crucial. Acknowledging and accepting your emotions, rather than pushing them away, can help you cope and move on. Make sure to take care of yourself by practicing self-care and reaching out to your partner for extra support.",
+         "I'm sorry to hear that you're feeling sad. Remember, it's normal to experience sadness, and it's essential to prioritize self-care during these times. Accepting and processing your emotions can help you overcome them. Take care of yourself by practicing self-care and talking to your partner if you need extra support.",
+         "I understand that you're feeling sad, and I'm sorry about that. It's vital to acknowledge and accept your emotions without judgment. You can help yourself by prioritizing self-care and seeking additional support from your partner. Remember that it's okay to feel down, and with time and self-care, you'll feel better."
       ]
    },
    {
       "emotion":"Tired",
       "recommendation":[
-         "Tired1",
-         "Tired2",
-         "Tired3"
+         "If you're feeling tired, it's important to take a break and prioritize self-care activities that can help you feel more energized and refreshed. This might include getting enough sleep, practicing mindfulness or meditation, engaging in physical activity, spending time in nature, or pursuing hobbies that bring you joy. It's also important to nourish your body with healthy foods and stay hydrated to support your physical and mental health. And don't forget, sharing your feelings with your partner can also be helpful. They can offer support and understanding, and help you feel less alone during difficult times. So don't hesitate to open up and talk about how you're feeling with the person you trust.",
+         "If you're feeling fatigued, it's essential to give your body and mind some much-needed rest. Take a break and engage in activities that promote relaxation and rejuvenation, such as getting ample sleep, practicing mindfulness or meditation, exercising, spending time in nature, or indulging in hobbies that bring you happiness. Moreover, it's crucial to nourish your body with healthy foods and stay hydrated. Remember, prioritizing your well-being is essential for your productivity and overall health, and don't hesitate to open up to your partner about how you're feeling.",
+         "Feeling exhausted can be a sign that you need to slow down and prioritize self-care. Take a pause and engage in activities that can help you relax and recharge, such as getting sufficient sleep, practicing mindfulness or meditation, exercising, spending time in the great outdoors, or pursuing hobbies that bring you pleasure. It's also vital to consume healthy foods and stay hydrated to support your body's well-being. Remember, your health is your wealth, and taking care of yourself will lead to better productivity. Furthermore, don't be afraid to confide in your partner and express how you feel.",
+         "If you're experiencing fatigue, it's time to put yourself first and take a break. Engage in activities that can help you unwind and recharge, such as ensuring you get enough sleep, practicing mindfulness or meditation, working out, spending time outdoors, or participating in hobbies that bring you joy. Additionally, make it a point to nourish your body with nutritious foods and remain hydrated. Always remember, taking care of yourself is crucial for your well-being and productivity. Moreover, if you feel comfortable, consider opening up to your partner about how you feel, as sharing your emotions can be a great way to find support and relief."
       ]
    },
    {
       "emotion":"Embarrassed",
       "recommendation":[
-         "Embarrassed1",
-         "Embarrassed2",
-         "Embarrassed3"
+         "If you're feeling embarrassed, it's important to remember that it happens to everyone at some point. Don't be too hard on yourself and try not to dwell on the situation too much. Instead, find a way to laugh it off or see the humor in the situation. Talking to a trusted friend or therapist can also be helpful in gaining perspective and finding ways to move forward. Remember, this feeling is temporary, and with time, it will pass.",
+         "Feeling embarrassed can be tough, but it's important to remember that it's a natural part of being human. Rather than focusing on the mistake or awkward moment, try to reframe it as a learning experience or an opportunity for growth. Don't hesitate to talk to a trusted friend or therapist about your feelings, as their perspective can help you gain insight and feel more supported. Remember, everyone experiences embarrassment at some point, and it will pass.",
+         "If you're feeling embarrassed, take a moment to breathe and remind yourself that you're not alone. It's okay to make mistakes and have moments of awkwardness. Try to be kind to yourself and avoid negative self-talk. Instead, focus on your positive qualities and what you can learn from the situation. Consider talking to a trusted friend or therapist to help process your emotions and gain new perspectives. Remember, embarrassment is temporary, but self-love and self-acceptance are lifelong practices.   "
       ]
    },
    {
       "emotion":"Playful",
       "recommendation":[
-         "Playful1",
-         "Playful2",
-         "Playful3"
+         "If you're looking to infuse more playfulness into your life, I suggest experimenting with new activities and embracing your creativity. This could involve discovering new interests, having fun with friends through games or trying different cuisines, or simply taking an alternative route to work. Allow yourself to let go of self-criticism and be receptive to new experiences. And don't forget to share your journey with your partner. By communicating how you feel, you can strengthen your bond and enjoy each other's company even more. Remember, incorporating playfulness into your routine can alleviate stress, spark imagination, and boost your overall happiness.",
+         "If you're seeking ways to add more playfulness to your day-to-day, I recommend trying out novel activities and unleashing your creative side. This might entail pursuing fresh hobbies, participating in group games, sampling new foods, or taking an alternate path on your regular commute. Give yourself permission to let go of self-judgment and embrace novel experiences. Additionally, sharing your feelings with your partner can be beneficial in creating an even stronger bond between you. Remember, by infusing your life with playfulness, you can reduce stress, stimulate innovation, and enhance your overall well-being.",
+         "Want to inject some playfulness into your life? Why not try exploring new activities and tapping into your creativity. This can include picking up new hobbies, playing games with friends, trying exotic dishes, or taking a different route to work. Allow yourself to let go of self-doubt and be open to new experiences. Sharing your feelings with your significant other can also be beneficial in strengthening your relationship. After all, adding playfulness to your daily routine can reduce stress, foster ingenuity, and elevate your overall quality of life."
       ]
    },
    {
       "emotion":"Loved",
       "recommendation":[
-         "Loved1",
-         "Loved2",
-         "Loved3"
+         "When you're feeling loved, don't keep it to yourself! Share your joy with your partner, family, and friends. Let them know how much you appreciate their love and support, and how it makes you feel. You can express your gratitude through words of affirmation, small gestures of affection, or simply spending quality time together. Sharing your positive emotions with others not only strengthens your relationships but also helps spread happiness and positivity to those around you.",
+         "Feeling loved is one of the most wonderful feelings in the world, and it's important to share it with those closest to you. Tell your partner how much you love and appreciate them, and how they make you feel special. Spend quality time with family and friends, and show them how much you care through thoughtful acts of kindness. Remember, expressing gratitude and appreciation not only makes others feel good but also deepens your own sense of connection and happiness.",
+         "When you're feeling loved, don't be afraid to share your happiness with your loved ones. Let your partner know how much they mean to you and how their love and support has helped you feel more confident and fulfilled. Spend quality time with your family and friends, and express your appreciation through thoughtful gestures and kind words. Remember, love is a powerful force that can bring people together and create deep, meaningful connections. By sharing your positive emotions, you not only strengthen your own relationships but also inspire others to spread love and kindness in the world."
       ]
    },
    {
       "emotion":"Angry",
       "recommendation":[
-         "Angry1",
-         "Angry2",
-         "Angry3"
+         "If you're feeling angry, I suggest giving yourself some space to cool down before reacting. Take a few deep breaths, or try using mindfulness techniques to help you regain your composure. Once you're feeling more level-headed, take some time to identify the source of your anger and consider if there's a constructive way to address the issue. It can also be helpful to talk with a trusted friend or therapist, or engage in physical activity to help release pent-up emotions. Remember, feeling angry is a normal emotion, but it's important to find healthy ways to manage and express it. Don't hesitate to share your feelings with your partner, as communication is key in any healthy relationship.",
+         "If you're struggling with anger, I recommend giving yourself some space to cool down and avoid reacting impulsively. Practicing mindfulness techniques or deep breathing exercises can help you regain your composure. Once you're feeling more grounded, take some time to reflect on the source of your anger and consider if there's a constructive way to address the issue. Don't hesitate to talk to a trusted friend or therapist to help you manage your emotions. Remember, it's okay to feel angry, but it's important to find healthy ways to express and manage those emotions. You can also talk to your partner about your feelings, as sharing your emotions can help you build a deeper connection.",
+         "If you're feeling angry, I recommend taking a step back and allowing yourself to cool down before reacting. Practice some deep breathing or mindfulness techniques to help you regain your composure. Once you're feeling calmer, try to identify the root cause of your anger and consider if there's a healthy way to address it. You can also try engaging in physical activity to help release pent-up emotions, or talking to a trusted friend or therapist for support. Remember, it's normal to experience anger, but it's important to find healthy ways to manage and express your emotions. Don't hesitate to share your feelings with your partner, as open communication can help build a stronger relationship."
       ]
    },
    {
       "emotion":"Confident",
       "recommendation":[
-         "Confident1",
-         "Confident2",
-         "Confident3"
+         "If you're struggling with confidence, try to focus on your strengths and accomplishments instead of your perceived weaknesses. Celebrate your successes, set achievable goals, and practice positive self-talk. And, don't forget to share your progress with your partner. Having someone who supports you can help you feel more confident in yourself and your abilities. Remember, confidence is a skill that you can develop over time.",
+         "To boost your confidence, start by recognizing your strengths and accomplishments. Don't be too hard on yourself for your weaknesses. Set small and achievable goals, and celebrate every step forward you make. Try to share your feelings with your partner, as having their support can make a big difference in building your self-confidence. Remember, confidence is built on positive experiences and self-belief.",
+         "Building confidence starts with focusing on your strengths, setting realistic goals, and celebrating your accomplishments. To strengthen your confidence even more, consider sharing your progress and journey with your partner. Having someone to share your successes and setbacks with can help you feel supported and motivated. Remember, confidence is not something you're born with - it's a skill that can be developed with practice and support."
       ]
    }
 ]
