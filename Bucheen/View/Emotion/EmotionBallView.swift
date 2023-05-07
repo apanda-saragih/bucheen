@@ -36,6 +36,6 @@ struct EmotionBallView: View {
 
             }
         }
-        .padding(.vertical)
+//        .padding(.vertical)
     }
 }

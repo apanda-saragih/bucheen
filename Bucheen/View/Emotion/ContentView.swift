@@ -15,6 +15,7 @@ struct ContentView: View {
     @AppStorage("name") var name : String?
     @AppStorage("code") var code : String?
     @AppStorage("has_partner") var hasPartner : Bool = false
+    @AppStorage("partner_code") var partnerCode : String?
     
     var iCloud = iCloudViewModel()
     
@@ -33,7 +34,7 @@ struct ContentView: View {
                             Text("Emotions")
                         }
                         .tag(0)
-                    RecapMain(vmEmotion : vmEmotion)
+                    RecapEmotionView(selectedTab: $selectedTab, vmEmotion : vmEmotion)
                         .tabItem {
                             Image("recap")
                             Text("Recap")

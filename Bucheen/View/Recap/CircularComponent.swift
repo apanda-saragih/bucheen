@@ -1,10 +1,3 @@
-//
-//  CircularComponent.swift
-//  Bucheen
-//
-//  Created by Abraham Putra Lukas on 02/05/23.
-//
-
 import SwiftUI
 
 struct CircularComponent: View {
@@ -15,8 +8,8 @@ struct CircularComponent: View {
         ZStack { // 1
             Circle()
                 .stroke(
-                    colorComponent.opacity(0.5),
-                    lineWidth: 8
+                    colorComponent.opacity(0.7),
+                    lineWidth: 6
                 )
             
             Circle() // 2
@@ -24,21 +17,21 @@ struct CircularComponent: View {
                 .stroke(
                     colorComponent,
                     style: StrokeStyle(
-                          lineWidth: 8,
+                          lineWidth: 6,
                           lineCap: .round
                       )
                 )
                 .rotationEffect(.degrees(-90))
             if (!value.isNaN) {
                 Text("\(Int(value*100))%")
-                    .font(.title2)
+                    .font(.title3)
                     .fontWeight(.semibold)
                     .foregroundColor(colorComponent)
             }
             
         }
         .padding()
-        .frame(width: 100, height: 100)
+        .frame(width: 90, height: 90)
     }
 }
 

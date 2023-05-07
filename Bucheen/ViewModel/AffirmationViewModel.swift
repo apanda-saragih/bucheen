@@ -12,10 +12,10 @@ class AffirmationViewModel: ObservableObject {
     @Published var listOfAffirmation: [AffirmationEntity] = []
 
     init(){
-        fetchAffirmation(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
+        fetchAffirmation(partnerCode: partnerCode ?? "partner")
     }
-    func fetchAffirmation(userCode : String, partnerCode: String) {
-        let predicate = NSPredicate(format: "userCode == %@ OR userCode == %@", userCode, partnerCode)
+    func fetchAffirmation(partnerCode: String) {
+        let predicate = NSPredicate(format: "userCode == %@", partnerCode)
         let request: NSFetchRequest<AffirmationEntity> = AffirmationEntity.fetchRequest()
         request.predicate = predicate
 
@@ -31,14 +31,14 @@ class AffirmationViewModel: ObservableObject {
         let newAffirmation = AffirmationEntity(context: manager.viewContext)
         newAffirmation.name = name
         newAffirmation.image = image
-        newAffirmation.userCode = partnerCode
+        newAffirmation.userCode = code
         newAffirmation.time = Date()
         saveData()
     }
 
     func saveData(){
         manager.saveData()
-        fetchAffirmation(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
+        fetchAffirmation(partnerCode: partnerCode ?? "partner")
         print("emotion is saved")
         print(listOfAffirmation)
     }

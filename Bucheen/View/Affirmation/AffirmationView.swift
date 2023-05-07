@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AffirmationView: View {
     
-//    var vmAffirm: AffirmationViewModel
+    var vmAffirm: AffirmationViewModel
     var vmEmotion : EmotionViewModel
     
     @State private var isAnimating = false
@@ -18,6 +18,7 @@ struct AffirmationView: View {
     
     @AppStorage("code") var code : String?
     @AppStorage("partner_code") var partnerCode : String?
+    @AppStorage("name") var name : String?
     
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 80))
@@ -25,10 +26,13 @@ struct AffirmationView: View {
     
     var body: some View {
         VStack {
-            Text("Your Partner's Feeling Today")
+            Text("Hi, " + (name ?? "User"))
                 .bold()
                 .font(.system(size:26))
                 .foregroundColor(Color("DarkPurple"))
+            
+            Text("Here is your partner current feeling today")
+                    .padding(.top)
             Text(currentFeeling)
                 .font(.headline)
                 .frame(minWidth: 100)
@@ -38,11 +42,10 @@ struct AffirmationView: View {
 
             EmotionBallView(emotionColor: $partnerEmotionsColor)
             AffirmationListView
-                .padding(.bottom, 72)
         }
         .onAppear(){
-            vmEmotion.fetchEmotions(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
-//            vmAffirm.fetchAffirmation(userCode: code ?? "00000", partnerCode: partnerCode ?? "partner")
+            vmEmotion.fetchEmotions(userCode: partnerCode ?? "00000", partnerCode: partnerCode ?? "partner")
+            vmAffirm.fetchAffirmation(partnerCode: code ?? "partner")
         }
         .onReceive(vmEmotion.$listOfEmotions) { _ in
             var listEntity = vmEmotion.listOfEmotions.filter({ entity in
@@ -84,7 +87,7 @@ struct AffirmationView: View {
 
 struct AffirmationView_Previews: PreviewProvider {
     static var previews: some View {
-        AffirmationView(vmEmotion: EmotionViewModel())
+        AffirmationView(vmAffirm: AffirmationViewModel(), vmEmotion: EmotionViewModel())
     }
 }
 
@@ -98,8 +101,8 @@ extension AffirmationView {
                 VStack{
                     Button {
                         
-//                        vmAffirm.addAffirmation(name: constantListOfAffirmation[affirmation], image: constantListOfAffirmation[affirmation], userCode: code ?? "00000"
-//                        )
+                        vmAffirm.addAffirmation(name: constantListOfAffirmation[affirmation], image: constantListOfAffirmation[affirmation], userCode: code ?? "00000"
+                        )
                         print(affirmation) //debug
                     } label: {
                         Image(constantListOfAffirmationButton[affirmation])

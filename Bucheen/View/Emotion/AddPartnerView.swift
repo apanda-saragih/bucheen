@@ -15,7 +15,7 @@ struct AddPartnerView: View {
     @AppStorage("partner_code") var partnerCode : String?
     @AppStorage("has_partner") var hasPartner : Bool?
     
-    @State var code : String = ""
+    @State var code1 : String = ""
     @State var currentSection : Int = 0
     @State var no1: String = ""
     @State var no2: String = ""
@@ -154,7 +154,7 @@ struct AddPartnerView: View {
                     .focused($focusedField, equals: .no5)
                     .onChange(of: no5) { newValue in
                         if newValue.count == 1 {
-                            code = no1 + no2 + no3 + no4 + no5
+                            code1 = no1 + no2 + no3 + no4 + no5
                         }
                     }
                 
@@ -177,7 +177,7 @@ struct AddPartnerView: View {
             
             Button {
                 //function to fetch data according to partner's code
-                partnerCode = code
+                partnerCode = code1
                 hasPartner = true
             } label: {
                 Text("Connect")
@@ -185,10 +185,11 @@ struct AddPartnerView: View {
                     .padding()
                     .padding(.horizontal)
                     .frame(maxWidth: .infinity, minHeight: 50)
-                    .background(Color("DarkPurple"))
+                    .background(isCodeEligible(code: code1) ? Color("DarkPurple") : Color("light_gray"))
                     .cornerRadius(10)
             }
             .padding(.top, 20)
+            .disabled(!isCodeEligible(code: code1))
             
         }.navigationBarBackButtonHidden(true)
             .toolbar(content: {
@@ -239,5 +240,17 @@ struct AddPartnerView_Previews: PreviewProvider {
     static var previews: some View {
         AddPartnerView()
     }
+}
+
+//MARK: FUNCTIONS
+
+extension AddPartnerView {
+    func isCodeEligible(code : String) -> Bool {
+        if code1.count == 5 {
+            return true
+        }
+        return false
+    }
+    
 }
 
